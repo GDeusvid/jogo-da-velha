@@ -51,7 +51,7 @@
                -2px -2px 0px rgb(19, 0, 50), 
                -2px 2px 0px rgb(19, 0, 50),                    
                 2px -2px 0px rgb(19, 0, 50),                  
-                5px 0px 0px rgb(19, 0, 50);
+                px 0px 0px rgb(19, 0, 50);
 
    
 }
@@ -114,8 +114,8 @@ h2{
   }
 
 .btnjogo{
-    color: rgb(19, 0, 50);
-    background: rgba(248, 250, 98, .7);
+    color: rgb(253, 245, 0);
+    background: rgba(15, 0, 47, .7);
     border: 0.1px solid transparent;
     
     display: flex;
@@ -124,31 +124,31 @@ h2{
 }
 
 .linha1 .btnjogo{
-    border-bottom: 2px solid rgb(19, 0, 50);
+    border-bottom: 2px solid rgb(255, 0, 189);
     
 }
 .linha2 .btnjogo{
-    border-bottom: 2px solid rgb(19, 0, 50);
-    border-top: 2px solid black;
+    border-bottom: 2px solid rgb(255, 0, 189);
+    border-top: 2px solid rgb(255, 0, 189);
     
 }
 .linha3 .btnjogo{
-    border-top: 2px solid rgb(19, 0, 50);
+    border-top: 2px solid rgb(255, 0, 189);
     
 }
 
 .coluna1{
-    border-right: 2px solid rgb(19, 0, 50);
+    border-right: 2px solid rgb(255, 0, 189);
     
     
 }
 .coluna2 {
-    border-left: 2px solid rgb(19, 0, 50);
-    border-right: 2px solid rgb(19, 0, 50);
+    border-left: 2px solid rgb(255, 0, 189);
+    border-right: 2px solid rgb(255, 0, 189);
     
 }
 .coluna3 {
-    border-left: 2px solid rgb(19, 0, 50);
+    border-left: 2px solid rgb(255, 0, 189);
     
 }
 

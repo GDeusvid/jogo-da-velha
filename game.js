@@ -23,22 +23,33 @@ function inicia1x1(){
     tipodeJogo = selectTipodeJogo[0];
     $("#1x1").hide();
     $("#1xcom").hide();
+    if (playerTime===0){
+        $("h2").html("Player 1");
+    }
     
-    $("h2").html("Player 1");
+    
     
     
     $(".btnjogo").click( function(){
     if (playerTime===0){
-        $("h2").html("Player 2");
-        $(this).html(letra[0]);
+        
+        if ($(this).text()==[]){
+            $("h2").html("Player 2");
+            $(this).html(letra[0]);
         verificaAcerto();
         playerTime = 1;
+        }
+        
         
     } else{
-        $("h2").html("Player 1");
-        $(this).html(letra[1]);
+        
+        if ($(this).text()==[]){
+           $("h2").html("Player 1"); 
+           $(this).html(letra[1]);
         verificaAcerto();
-        playerTime =0;
+        playerTime =0; 
+        }
+        
     }   
 });
 }
@@ -179,7 +190,7 @@ $("#mudarmodo").click(function(){
     location.reload();
 });
 
-
+ 
 // algoritmo computador
 $("#1xcom").click( function(){
     $(".container").css("margin-top",0);
@@ -195,13 +206,19 @@ function inicia1xcom(){
     $("#1xcom").hide();  
     $("h2").html("Player 1");
     $(".btnjogo").click( function(){
+        var cliqueVerdade=0;
         if (playerTime===0){
-            playerTime = 1;
-            $("h2").html("Player COM.");
-            $(this).html(letra[0]);
-            ondeClicou.push($(this).attr("id"));
             
-            verificaAcerto();
+            $("h2").html("Player COM.");
+            if ($(this).text() ==[]){
+                $(this).html(letra[0]);
+            ondeClicou.push($(this).attr("id"));
+            cliqueVerdade=1;
+            playerTime = 1;
+            } 
+            if (cliqueVerdade==1){
+                cliqueVerdade=0;
+                verificaAcerto();
             setTimeout(function() {
                 console.log("teste")
                 algoritmoCom();
@@ -211,6 +228,14 @@ function inicia1xcom(){
                 }
                 round++;
             }, 700);
+            } else{
+                inicia1xcom();
+            }
+            
+            
+            
+            
+            
                         
         }   
     });
