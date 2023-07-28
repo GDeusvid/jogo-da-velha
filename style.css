@@ -45,13 +45,13 @@
     margin-top: 0;
 }
 .title p{
-    color: white;
+    color: white; 
     margin: 0;
     text-shadow: 
                -2px -2px 0px rgb(19, 0, 50), 
                -2px 2px 0px rgb(19, 0, 50),                    
                 2px -2px 0px rgb(19, 0, 50),                  
-                px 0px 0px rgb(19, 0, 50);
+                2px 0px 0px rgb(19, 0, 50);
 
    
 }
@@ -180,7 +180,7 @@ h2{
 }
 @media (max-width: 767px){
     .row_again button{
-        font-size: 1.1em;
+        font-size: 1em;
       margin-inline: 1vw;  
       }
   }
