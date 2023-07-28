@@ -90,7 +90,13 @@ function vitoria(letrawin){
         $("h2").html("Player 1 VENCEU!");
     } 
     if (letrawin === "O"){
-        $("h2").html("Player 2 VENCEU!");
+        if (tipodeJogo === selectTipodeJogo[0]){
+            $("h2").html("Player 2 VENCEU!");
+        }
+        if (tipodeJogo === selectTipodeJogo[1]){
+            $("h2").html("Player COM. VENCEU!");
+        }
+        
     }
     if (letrawin === "empate"){
         $("h2").html("Empate!");
@@ -99,6 +105,9 @@ function vitoria(letrawin){
 
     if (tipodeJogo === selectTipodeJogo[0]){
         $("#again1x1").css("display","flex");
+    }
+    if (tipodeJogo === selectTipodeJogo[1]){
+        $("#again1xcom").css("display","flex");
     }
     $("#mudarmodo").css("display","flex");
     
@@ -123,6 +132,40 @@ $("#again1x1").click(function(){
 
 });
 
+$("#again1xcom").click(function(){
+    
+    for (var i=1; i<4;i++){
+        $("#1-"+i).html("");
+        $("#2-"+i).html("");
+        $("#3-"+i).html("");
+            
+    }
+    $("#mudarmodo").css("display","none");
+    $("#again1xcom").css("display","none");
+    $("h2").html("Player 1");
+    $( ".btn" ).prop( "disabled", false );
+    playerTime = 0;
+    round = 1;
+    ondeClicou = [];
+    randomNumber = 0;
+    randomNumber2 =0;
+    posicao1 = 0;
+    impedirganhar =[];
+    ondeComputadorClicou =[];
+    vazioRound3 = [];
+    vazioRound4 = [];
+
+
+
+    $("#1xcom").click( function(){
+        inicia1xcom();
+    });
+    
+
+});
+
+
+
 $("#mudarmodo").click(function(){
     location.reload();
 });
@@ -142,20 +185,21 @@ function inicia1xcom(){
     $(".btn").click( function(){
         if (playerTime===0){
             playerTime = 1;
-            $("h2").html("Player 2");
+            $("h2").html("Player COM.");
             $(this).html(letra[0]);
             ondeClicou.push($(this).attr("id"));
             
             verificaAcerto();
-            
-            algoritmoCom();
-            verificaAcerto();
-            if (verificaAcerto() === true) {
-                return
-            }
-            round++;
-            
-            
+            setTimeout(function() {
+                console.log("teste")
+                algoritmoCom();
+                verificaAcerto();
+                if (verificaAcerto() === true) {
+                    return
+                }
+                round++;
+            }, 700);
+                        
         }   
     });
 }
@@ -180,9 +224,10 @@ var ondeComputadorClicou =[];
 
 
 
+
 function algoritmoCom(){
     playerTime = 0;
-    
+    $("h2").html("Player 1");
     // ROUND 1
     if ( round==1){
         if ($("#1-1").text() != [] || $("#1-3").text() != []  || $("#3-1").text() != []  || $("#3-3").text() != []){
@@ -242,6 +287,34 @@ function algoritmoCom(){
         if ( ondeClicou[0]== "2-2"){
 
             defesa();
+            if (ondeComputadorClicou.length ==1){
+                var possibilidadeOXXdiag = [];
+                if ( ondeComputadorClicou[0] == "1-1" ){
+                    possibilidadeOXXdiag = ["1-2","1-3","2-1","3-1"];
+                    var randomNumber6 = Math.floor(Math.random() * 4);
+                    $("#"+possibilidadeOXXdiag[randomNumber6]).html(letra[1]);
+                    ondeComputadorClicou.push(possibilidadeOXXdiag[randomNumber6]);
+                }
+                if ( ondeComputadorClicou[0] == "1-3" ){
+                    possibilidadeOXXdiag = ["1-1","1-2","2-3","3-3"];
+                    var randomNumber6 = Math.floor(Math.random() * 4);
+                    $("#"+possibilidadeOXXdiag[randomNumber6]).html(letra[1]);
+                    ondeComputadorClicou.push(possibilidadeOXXdiag[randomNumber6]);
+                }
+                if ( ondeComputadorClicou[0] == "3-1" ){
+                    possibilidadeOXXdiag = ["1-1","2-1","3-2","3-3"];
+                    var randomNumber6 = Math.floor(Math.random() * 4);
+                    $("#"+possibilidadeOXXdiag[randomNumber6]).html(letra[1]);
+                    ondeComputadorClicou.push(possibilidadeOXXdiag[randomNumber6]);
+                }
+                if ( ondeComputadorClicou[0] == "3-3" ){
+                    possibilidadeOXXdiag = ["1-3","2-3","3-1","3-2"];
+                    var randomNumber6 = Math.floor(Math.random() * 4);
+                    $("#"+possibilidadeOXXdiag[randomNumber6]).html(letra[1]);
+                    ondeComputadorClicou.push(possibilidadeOXXdiag[randomNumber6]);
+                }
+            }
+
         }
         if (ondeClicou[0]== "1-1" || ondeClicou[0]== "1-3" || ondeClicou[0]== "3-1" || ondeClicou[0]== "3-3" ){
             defesa();
@@ -449,23 +522,22 @@ var vazioRound3 = [];
                     }
                 }
                 
-                if ($("#"+vazioRound3[randomNumber4]).text() == []){
-                    $("#"+vazioRound3[randomNumber4]).html(letra[1]);
-                    ondeComputadorClicou.push(vazioRound3[randomNumber4]);
-                } else{
-                    algoritmoCom();
-                }
+                
+                $("#"+vazioRound3[randomNumber4]).html(letra[1]);
+                ondeComputadorClicou.push(vazioRound3[randomNumber4]);
+                 
                 
             }
 
         }
 
     }
-
+var vazioRound4 = [];
     // ROUND 4
     if (round===4){
        
         if ( ondeClicou[0]== "2-2"){
+            
             ataque();
             if (ondeComputadorClicou.length ==3){
                 defesa();
@@ -476,43 +548,46 @@ var vazioRound3 = [];
                 for (var l=1;l<4;l++){
                     for (var c=1;c<4;c++){
                         if ( $("#"+l+"-"+c).text() == []   ){
-                            vazioRound3.push(l+"-"+c);
+                            vazioRound4.push(l+"-"+c);
                         }
                     }
                 }
                 
-                if ($("#"+vazioRound3[randomNumber4]).text() == []){
-                    $("#"+vazioRound3[randomNumber4]).html(letra[1]);
-                    ondeComputadorClicou.push(vazioRound3[randomNumber4]);
+                if ($("#"+vazioRound4[randomNumber4]).text() == []){
+                    $("#"+vazioRound4[randomNumber4]).html(letra[1]);
+                    ondeComputadorClicou.push(vazioRound4[randomNumber4]);
                 } else{
                     algoritmoCom();
                 }
                 
             }
         } else{
+           
             ataque();
             if (ondeComputadorClicou.length ==3){
+                
                 defesa();
             }
             if (ondeComputadorClicou.length ==3){
                 
                 var randomNumber5 = Math.floor(Math.random() * 2);
+                
                 for (var l=1;l<4;l++){
                     for (var c=1;c<4;c++){
                         if ( $("#"+l+"-"+c).text() == []   ){
-                            vazioRound3.push(l+"-"+c);
+                            
+                            vazioRound4.push(l+"-"+c);
+                            
                         }
                     }
                 }
                 
-                if ($("#"+vazioRound3[randomNumber4]).text() == []){
-                    $("#"+vazioRound3[randomNumber4]).html(letra[1]);
-                    ondeComputadorClicou.push(vazioRound3[randomNumber4]);
-                } else{
-                    algoritmoCom();
-                }
+               
+                $("#"+vazioRound4[randomNumber5]).html(letra[1]);
+                ondeComputadorClicou.push(vazioRound4[randomNumber4]);
                 
-            }
+                
+            } 
 
         }
         
@@ -525,7 +600,7 @@ var vazioRound3 = [];
 
     setTimeout(function() {
          
-        
+          
         
     }, 1000);
     
