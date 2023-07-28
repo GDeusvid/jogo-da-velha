@@ -1,3 +1,9 @@
+$("body").css("background-size",$(document).width());
+$(".malha").hide();
+$("h2").hide();
+
+
+
 var playerTime = 0;
 var letra = ["X","O"];
 var selectTipodeJogo = ["1x1","1xcom"];
@@ -6,7 +12,10 @@ var tipodeJogo = [];
 
 
 $("#1x1").click( function(){
+    $(".container").css("margin-top",0);
     inicia1x1();
+    $("h2").show();
+    $(".malha").fadeIn();
 });
 
 function inicia1x1(){
@@ -18,7 +27,7 @@ function inicia1x1(){
     $("h2").html("Player 1");
     
     
-    $(".btn").click( function(){
+    $(".btnjogo").click( function(){
     if (playerTime===0){
         $("h2").html("Player 2");
         $(this).html(letra[0]);
@@ -85,7 +94,7 @@ function verificaAcerto(){
 }
 
 function vitoria(letrawin){
-    $( ".btn" ).prop( "disabled", true );
+    $( ".btnjogo" ).prop( "disabled", true );
     if (letrawin === "X"){
         $("h2").html("Player 1 VENCEU!");
     } 
@@ -124,7 +133,7 @@ $("#again1x1").click(function(){
     $("#mudarmodo").css("display","none");
     $("#again1x1").css("display","none");
     $("h2").html("Player 1");
-    $( ".btn" ).prop( "disabled", false );
+    $( ".btnjogo" ).prop( "disabled", false );
     playerTime = 0;
     $("#1x1").click( function(){
         inicia1x1();
@@ -143,7 +152,7 @@ $("#again1xcom").click(function(){
     $("#mudarmodo").css("display","none");
     $("#again1xcom").css("display","none");
     $("h2").html("Player 1");
-    $( ".btn" ).prop( "disabled", false );
+    $( ".btnjogo" ).prop( "disabled", false );
     playerTime = 0;
     round = 1;
     ondeClicou = [];
@@ -173,6 +182,9 @@ $("#mudarmodo").click(function(){
 
 // algoritmo computador
 $("#1xcom").click( function(){
+    $(".container").css("margin-top",0);
+    $("h2").show();
+    $(".malha").fadeIn();
     inicia1xcom();
 });
 var ondeClicou = [];
@@ -182,7 +194,7 @@ function inicia1xcom(){
     $("#1x1").hide();
     $("#1xcom").hide();  
     $("h2").html("Player 1");
-    $(".btn").click( function(){
+    $(".btnjogo").click( function(){
         if (playerTime===0){
             playerTime = 1;
             $("h2").html("Player COM.");

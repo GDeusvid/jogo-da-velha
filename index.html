@@ -6,52 +6,65 @@
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
 </head>
 <body>
-    <div class="title">
-        <p> JOGO DA VELHA</p>
+<div id="page-container">
+    <div id="content-wrap">
+     <div class="title">
+        <p>JOGO</p>
+        <p>&nbsp;&nbsp;DA&nbsp;&nbsp;</p>
+        <p>VELHA</p>
     </div>
  
     <div class="container">
-        <div class="row">
-            <button id="1x1"> 1 X 1</button>
-            <button id="1xcom"> 1 X COM.</button>
-            <h2></h2>
+        <div class="row0">
+            <button class="btn btn-outline-warning" id="1x1" style="--bs-btn-color: rgb(19, 0, 50);"> 1 X 1</button>
+            <button class="btn btn-outline-warning" id="1xcom" style="--bs-btn-color: rgb(19, 0, 50);"> 1 X COM.</button>
+            <h2 style="color: white"></h2>
             
         </div>
     </div>
  
         <div class="container_again">
             <div class="row_again">
-            <button id="again1x1"> Jogar Novamente!</button>
-            <button id="again1xcom"> Jogar Novamente!</button>
-            <button id="mudarmodo"> Mudar modo</button>
+            <button class="btn btn-outline-warning" id="again1x1" style="--bs-btn-color: rgb(19, 0, 50);"> Jogar Novamente!</button>
+            <button class="btn btn-outline-warning" id="again1xcom" style="--bs-btn-color: rgb(19, 0, 50);"> Jogar Novamente!</button>
+            <button class="btn btn-outline-warning" id="mudarmodo" style="--bs-btn-color: rgb(19, 0, 50);"> Mudar modo</button>
                 
             </div>    
          </div>
 
     <div class="malha">
-        <div class="row linha1">
-            <button id="1-1" class="btn coluna1"></button>
-            <button id="1-2" class="btn coluna2"></button>
-            <button id="1-3" class="btn coluna3"></button>
+        <div class="rowjogo linha1">
+            <button id="1-1" class="btnjogo coluna1"></button>
+            <button id="1-2" class="btnjogo coluna2"></button>
+            <button id="1-3" class="btnjogo coluna3"></button>
             
         </div>
-        <div class="row linha2">
-            <button id="2-1" class="btn coluna1"></button>
-            <button id="2-2" class="btn coluna2"></button>
-            <button id="2-3" class="btn coluna3"></button>
+        <div class="rowjogo linha2">
+            <button id="2-1" class="btnjogo coluna1"></button>
+            <button id="2-2" class="btnjogo coluna2"></button>
+            <button id="2-3" class="btnjogo coluna3"></button>
             
         </div>
-        <div class="row linha3">
-            <button id="3-1" class="btn coluna1"></button>
-            <button id="3-2" class="btn coluna2"></button>
-            <button id="3-3" class="btn coluna3"></button>
+        <div class="rowjogo linha3">
+            <button id="3-1" class="btnjogo coluna1"></button>
+            <button id="3-2" class="btnjogo coluna2"></button>
+            <button id="3-3" class="btnjogo coluna3"></button>
             
         </div>
+    </div>     
+
     </div>
+    <footer id="footer">© 2023 David Gonçalves, Web Dev</footer>
+</div>
+
+
     
     
+    
 
 
 
@@ -66,7 +79,7 @@
 
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script src="./game.js"></script>
 </body>
