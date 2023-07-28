@@ -13,9 +13,10 @@ var tipodeJogo = [];
 
 $("#1x1").click( function(){
     $(".container").css("margin-top",0);
-    inicia1x1();
     $("h2").show();
     $(".malha").fadeIn();
+    $("body").css("backdrop-filter","blur(10px)");
+    inicia1x1();
 });
 
 function inicia1x1(){
@@ -196,6 +197,7 @@ $("#1xcom").click( function(){
     $(".container").css("margin-top",0);
     $("h2").show();
     $(".malha").fadeIn();
+    $("body").css("backdrop-filter","blur(10px)");
     inicia1xcom();
 });
 var ondeClicou = [];
