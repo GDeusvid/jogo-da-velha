@@ -1,0 +1,91 @@
+body{
+    background-image: url(./background2.jpg);
+}
+
+.title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    font-size: 4em;
+    margin-top: 0;
+}
+.title p{
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+}
+ 
+.container{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.malha{
+    margin-top: 7vh;
+}
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    height: 10vw;
+    width: 10vw;
+    background-color: transparent;
+    border: 0.1px solid transparent;
+    font-size: 8vw;
+}
+
+.linha1 .btn{
+    border-bottom: 2px solid black;
+    
+}
+.linha2 .btn{
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    
+}
+.linha3 .btn{
+    border-top: 2px solid black;
+    
+}
+
+.coluna1{
+    border-right: 2px solid black;
+    
+    
+}
+.coluna2 {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    
+}
+.coluna3 {
+    border-left: 2px solid black;
+    
+}
+
+
+/*  Sessão Game Ativo */
+.container_again{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.row_again{
+    display: flex;
+    justify-content: center;
+}
+
+#again1x1{
+    display: none;
+}
+#again1xcom{
+    display: none;
+}
+#mudarmodo{
+    display: none;
+}
