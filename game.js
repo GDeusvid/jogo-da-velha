@@ -576,14 +576,14 @@ var vazioRound4 = [];
     if (round===4){
        
         if ( ondeClicou[0]== "2-2"){
-            console.log("test")
+            
             ataque();
             if (ondeComputadorClicou.length ==3){
                 defesa();
-                console.log("test2")
+                
             }
             if (ondeComputadorClicou.length ==3){
-                console.log("test3")
+                
                 var randomNumber5 = Math.floor(Math.random() * 2);
                 for (var l=1;l<4;l++){
                     for (var c=1;c<4;c++){
@@ -595,7 +595,7 @@ var vazioRound4 = [];
                 
                 if ($("#"+vazioRound4[randomNumber5]).text() == []){
                     $("#"+vazioRound4[randomNumber5]).html(letra[1]);
-                    ondeComputadorClicou.push(vazioRound4[randomNumber4]);
+                    ondeComputadorClicou.push(vazioRound4[randomNumber5]);
                 } else{
                     algoritmoCom();
                 }
