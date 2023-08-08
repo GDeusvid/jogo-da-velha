@@ -1,198 +1,418 @@
 @media (min-width: 768px){
     body{
-    background-image: url(./background2.jpg);
-    
-    
-    
+        margin-left: 0;
+        margin-right: 0;
+        background-image: url(./images/background2.jpg);
+        background-size: 100vw;
+        font-family: 'Julee', cursive;
     }
-    .title{
-        font-size: 4em;
-    }
-}
-@media (max-width: 767px){
-    body{
-        background-image: url(./background3.png);
+    #page-container {
+        position: relative;
         
-        }
-    .title{
-        font-size: 3em;
-    }
-  }
-  #page-container {
-    position: relative;
-    min-height: 100vh;
-  }
-  
-  #content-wrap {
-    padding-bottom: 2.5rem;    /* altura do rodapé */
-  }
-  
-  #footer {
-    display: flex;
-    justify-content: center;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2rem;            /* altura do rodapé */
-  }
-
-.title{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-    
-    margin-top: 0;
-}
-.title p{
-    color: white; 
-    margin: 0;
-    text-shadow: 
-               -2px -2px 0px rgb(19, 0, 50), 
-               -2px 2px 0px rgb(19, 0, 50),                    
-                2px -2px 0px rgb(19, 0, 50),                  
-                2px 0px 0px rgb(19, 0, 50);
-
-   
-}
- 
-.container{
-    margin-top: 20vh;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: baseline;
-    
-}
-.row0{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.row0 button{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 2.5em;
-    background-color: rgba(248, 250, 98, .7);
-    margin: .5em;
-
-}
-
-.malha{
-    margin-top: 3vh;
-}
-.rowjogo{
-    display: flex;
-    justify-content: center;
-}
-
-h2{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 2em;
-    color: white;
-    background-color: rgba(158, 1, 130, .9);
-    padding: .5em;
-    border: 0.1em solid white;
-    border-radius: .2em;
-}
-
-@media (min-width: 768px){
-    .btnjogo{
-        height: 10vw;
-        width: 10vw;
-        font-size: 8vw;
-    }
-}
-@media (max-width: 767px){
-    .btnjogo{
-        
-    height: 25vw;
-    width: 25vw;
-    font-size: 20vw;
-        }
-  }
-
-.btnjogo{
-    color: rgb(253, 245, 0);
-    background: rgba(15, 0, 47, .7);
-    border: 0.1px solid transparent;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.linha1 .btnjogo{
-    border-bottom: 2px solid rgb(255, 0, 189);
-    
-}
-.linha2 .btnjogo{
-    border-bottom: 2px solid rgb(255, 0, 189);
-    border-top: 2px solid rgb(255, 0, 189);
-    
-}
-.linha3 .btnjogo{
-    border-top: 2px solid rgb(255, 0, 189);
-    
-}
-
-.coluna1{
-    border-right: 2px solid rgb(255, 0, 189);
-    
-    
-}
-.coluna2 {
-    border-left: 2px solid rgb(255, 0, 189);
-    border-right: 2px solid rgb(255, 0, 189);
-    
-}
-.coluna3 {
-    border-left: 2px solid rgb(255, 0, 189);
-    
-}
-
-
-/*  Sessão Game Ativo */
-.container_again{
-    margin-top: 0;
-    display: flex;
-    justify-content: center;
-    
-}
- 
-.row_again{
-    display: flex;
-    justify-content: center;
-}
-.row_again button{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
-    background-color: rgba(248, 250, 98, .9);
-    
-}
-@media (min-width: 768px){
-    .row_again button{
-      font-size: 1.5em;
-    margin-inline: 1vw;  
-    }
-    
-}
-@media (max-width: 767px){
-    .row_again button{
-        font-size: 1em;
-      margin-inline: 1vw;  
       }
-  }
+      
+      #content-wrap {
+        padding-bottom: .5rem;    /* altura do rodapé */
+      }
+      
+      #footer {
+        display: flex;
+        justify-content: center;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 0rem;            /* altura do rodapé */
+      }
+    .externo{
+        
+        display: grid;
+        grid-template-columns: repeat(5, 19.8vw);
+        grid-template-rows: repeat(5, 19vh);
+        color: white;
+    }
+    h1{
+        margin-top: 0.2em;
+        margin-bottom: 0.2em;
+        font-size: 4em;
+        display: flex;
+        justify-content: center;
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+    .tela{
+        background-image: url(./images/background.png);
+        background-size: 70vw;
+        
+        grid-column: 2/5;
+        grid-row: 2/6;
+         
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
 
-#again1x1{
-    display: none;
+    }
+
+    .boneco > .desenho{
+        height: 20vw;
+    }
+    .boneco{
+        
+            grid-column: 5/8;
+            grid-row: 1/5;
+            font-size: 10vh;
+        
+    }
+    .statusgame{
+        font-size: 1.3em;
+        display: flex;
+        justify-content: center;
+        grid-column: 4/9;
+            grid-row: 6/9;
+    }
+    .palavras{
+        display: flex;
+        justify-content: center;
+        
+        font-size: 5vh ;
+        grid-column: 1/13;
+            grid-row:7/10;
+    }
+    .palavras > p{
+        margin-left: 2vh;
+        margin-right: 2vh;
+    }
+    .fileiras{
+        display: flex;
+        justify-content: center;
+    }
+    .fileira1{
+        
+        grid-column: 1/13;
+        grid-row: 10/11;
+           
+    }
+    .fileira2{
+        
+        grid-column: 1/13;
+        grid-row: 11/12;
+           
+    }
+    .fileira3{
+        
+        grid-column: 1/13;
+        grid-row: 12/13;
+           
+    }
+.fileiras > button{
+    width: 5vh;
+    margin-bottom: 1vh;
+    margin-left: 2vh;
+        margin-right: 2vh;
+        border: 1px solid black;
 }
-#again1xcom{
-    display: none;
+
+h3{
+    font-size: 1.5em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    grid-column: 2/6;
+    grid-row: 1/2;
 }
-#mudarmodo{
-    display: none;
+.temas1{
+    grid-column: 2/3;
+    grid-row: 2/12;
 }
+.temas1 > button{
+    width: 20vh;
+}
+.menudireito {
+    
+    
+    grid-column: 10/13;
+    grid-row: 1/6;
+}
+h4{
+    font-size: 1.5em;
+}
+h5{
+    font-size: 1.5em;
+}
+.selecttema{
+    font-family: 'Julee', cursive;
+    font-size: 1.2em;
+    color: white;
+    background-color: rgb(190, 86, 194, .5);
+}
+.botaoLetra{
+    font-family: 'Julee', cursive;
+    font-size: 1.2em;
+    color: white;
+}
+.botaoLetraOn{
+    
+    background-color: rgb(179, 123, 97, .6);
+}
+
+.selecttemamousehover{
+    background-color: rgb(86, 89, 194, .5);
+}
+
+.botaoLetraCerto{
+    
+    background-color: rgba(43, 221, 20, 0.5);
+}
+.botaoLetraErrado{
+    
+    background-color: rgba(211, 29, 29, 0.5);
+}
+.revelar{
+    font-family: 'Julee', cursive;
+    font-size: 1.2em;
+    color: white;
+    background-color: rgb(86, 89, 194, .5);
+}
+.reiniciar{
+    font-family: 'Julee', cursive;
+    font-size: 1.2em;
+    color: white;
+    background-color: rgb(190, 86, 194, .5);
+}
+
+  } 
+
+
+
+  /*  PARA MOBILE */ 
+
+
+
+
+  @media (max-width: 767px){
+    body{
+        margin-left: 0;
+        margin-right: 0;
+        background-image: url(./images/background3.png);
+        background-size: 100vw;
+        font-family: 'Julee', cursive;
+        margin: 0;
+    }
+    #page-container {
+        position: relative;
+        
+      }
+      
+      #content-wrap {
+        padding-bottom: 0rem;    /* altura do rodapé */
+      }
+      
+      #footer {
+        display: flex;
+        justify-content: center;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2rem;            /* altura do rodapé */
+      }
+    .externo{
+        
+        display: grid;
+        grid-template-columns: repeat(20, 4.8vw);
+        grid-template-rows: repeat(20, 5vh);
+        color: white;
+    }
+    h1{
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        font-size: 2.5em;
+        display: flex;
+        justify-content: center;
+        grid-column: 1/21;
+        grid-row: 1/2;
+    }
+    .tela{
+        background-image: url(./images/background5.png);
+        background-size: 100vw;
+        
+        grid-column: 2/20;
+        grid-row: 3/20;
+        
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+
+    }
+
+    .boneco > .desenho{
+        height: 50vw;
+    }
+    .boneco{
+            display: flex;
+            justify-content: center;
+            grid-column: 4/12;
+            grid-row: 3/6;
+            font-size: 10vh;
+        
+    }
+    .statusgame{
+        font-size: 1.3em;
+        display: flex;
+        justify-content: center;
+        grid-column: 2/12;
+            grid-row: 5/6;
+            margin-top: 11vw;
+    }
+    .palavras{
+        display: flex;
+        justify-content: center;
+        
+        font-size: 4vh ;
+        grid-column: 1/13;
+            grid-row:8/10;
+    }
+    .palavras > p{
+        margin-left: .5vh;
+        margin-right: .5vh;
+    }
+    .fileiras{
+        display: flex;
+        justify-content: center;
+    }
+    .fileira1{
+        
+        grid-column: 1/13;
+        grid-row: 10/11;
+           
+    }
+    .fileira2{
+        
+        grid-column: 1/13;
+        grid-row: 11/12;
+           
+    }
+    .fileira3{
+        
+        grid-column: 1/13;
+        grid-row: 12/13;
+           
+    }
+.fileiras > button{
+    
+    
+    margin-bottom: 1vh;
+    margin-left: .5vh;
+        margin-right: .5vh;
+        border: 1px solid black;
+}
+.fileira1 > button{
+    width:7vw;
+    
+    
+}
+.fileira2 > button{
+    width: 7vw;
+    
+    
+}
+.fileira3 > button{
+    width: 7vw;
+    
+    
+}
+
+
+h3{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    grid-column: 2/12;
+    grid-row: 1/2;
+}
+.temas1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-column: 4/10;
+    grid-row: 2/10;
+}
+.temas1 > button{
+    width: 20vh;
+}
+.menudireito {
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10,1fr);
+    
+    grid-column: 2/12;
+    grid-row: 2/9;
+}
+h4{
+    grid-column: 1/11;
+    display: flex;
+    justify-content: center;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.5em;
+}
+h5{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    grid-column: 1/11;
+    grid-row: 8/11;
+    font-size: 1.5em;
+}
+.selecttema{
+    font-family: 'Julee', cursive;
+    font-size: 1.2em;
+    color: white;
+    background-color: rgb(190, 86, 194, .5);
+}
+.botaoLetra{
+    font-family: 'Julee', cursive;
+    font-size: 1.2em;
+    color: white;
+}
+.botaoLetraOn{
+    
+    background-color: rgb(179, 123, 97, .6);
+}
+
+.selecttemamousehover{
+    background-color: rgb(86, 89, 194, .5);
+}
+
+.botaoLetraCerto{
+    
+    background-color: rgba(43, 221, 20, 0.5);
+}
+.botaoLetraErrado{
+    
+    background-color: rgba(211, 29, 29, 0.5);
+}
+.revelar{
+    z-index: 5;
+    grid-column: 1/4;
+    grid-row: 7/8;
+    font-family: 'Julee', cursive;
+    font-size: 1.2em;
+    color: white;
+    background-color: rgb(86, 89, 194, .5);
+}
+.reiniciar{
+    z-index: 5;
+    grid-column: 8/11;
+    grid-row: 7/8;
+    font-family: 'Julee', cursive;
+    font-size: 1.2em;
+    color: white;
+    background-color: rgb(190, 86, 194, .5);
+}
+
+  } 

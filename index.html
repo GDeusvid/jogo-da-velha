@@ -1,89 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo da Velha</title>
+    <title>JOGO DA VELHA</title>
     <link rel="shortcut icon" href="./icon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Julee&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body> 
 <div id="page-container">
     <div id="content-wrap">
-     <div class="title">
-        <p>JOGO</p>
-        <p>&nbsp;&nbsp;DA&nbsp;&nbsp;</p>
-        <p>VELHA</p>
-    </div>
- 
-    <div class="container">
-        <div class="row0">
-            <button class="btn btn-outline-warning" id="1x1" style="--bs-btn-color: rgb(19, 0, 50);"> 1 X 1</button>
-            <button class="btn btn-outline-warning" id="1xcom" style="--bs-btn-color: rgb(19, 0, 50);"> 1 X COM.</button>
-            <h2 style="color: white"></h2>
-            
+<div class="externo">
+    <h1>JOGO DA FORCA</h1>
+    <div class="tela">
+        <h3>Escolha o Tema:</h3>
+        <div class="temas1">
+            <button class="selecttema" id="Frutas"><b>FRUTAS</b> </button>
+            <button class="selecttema" id="Objetos"><b>OBJETOS</b> </button>
+            <button class="selecttema" id="Animais"><b>ANIMAIS</b> </button>
+            <button class="selecttema" id="Profissoes"><b>PROFISSÕES</b> </button>
+            <button class="selecttema" id="Cores"><b>CORES</b> </button>
+            <button class="selecttema" id="Países"><b>PAÍSES</b> </button>
+            <button class="selecttema" id="Comidas"><b>COMIDAS</b> </button>
+            <button class="selecttema" id="Esportes"><b>ESPORTES</b> </button>
+            <button class="selecttema" id="Transportes"><b>TRANSPORTES</b> </button>
+            <button class="selecttema" id="Materiais"><b>MATERIAIS</b> </button>
+             
         </div>
-    </div>
- 
-        <div class="container_again">
-            <div class="row_again">
-            <button class="btn btn-outline-warning" id="again1x1" style="--bs-btn-color: rgb(19, 0, 50);"> Jogar Novamente!</button>
-            <button class="btn btn-outline-warning" id="again1xcom" style="--bs-btn-color: rgb(19, 0, 50);"> Jogar Novamente!</button>
-            <button class="btn btn-outline-warning" id="mudarmodo" style="--bs-btn-color: rgb(19, 0, 50);"> Mudar Modo</button>
-                
-            </div>    
-         </div>
+        <div class="menudireito">
+            <h4>  </h4>
+            <button class="revelar">REVELAR</button>
+            <h5> </h5>
+            <button class="reiniciar">REINICIAR</button>
+        </div>
+        
+         
+        <div class="boneco">
+            <img class="desenho" id="desenhoboneco0" src="./images/status1.png" alt=" desenho boneco">
+            <img class="desenho" id="desenhoboneco1" src="./images/status2.png" alt="desenho boneco">
+            <img class="desenho" id="desenhoboneco2" src="./images/status3.png" alt="desenho boneco">
+            <img class="desenho" id="desenhoboneco3" src="./images/status4.png" alt="desenho boneco">
+            <img class="desenho" id="desenhoboneco4" src="./images/status5.png" alt="desenho boneco">
+            <img class="desenho" id="desenhoboneco5" src="./images/status6.png" alt="desenho boneco">
+            <img class="desenho" id="desenhoboneco6" src="./images/status7.png" alt="desenho boneco">
 
-    <div class="malha">
-        <div class="rowjogo linha1">
-            <button id="1-1" class="btnjogo coluna1"></button>
-            <button id="1-2" class="btnjogo coluna2"></button>
-            <button id="1-3" class="btnjogo coluna3"></button>
-            
         </div>
-        <div class="rowjogo linha2">
-            <button id="2-1" class="btnjogo coluna1"></button>
-            <button id="2-2" class="btnjogo coluna2"></button>
-            <button id="2-3" class="btnjogo coluna3"></button>
-            
-        </div>
-        <div class="rowjogo linha3">
-            <button id="3-1" class="btnjogo coluna1"></button>
-            <button id="3-2" class="btnjogo coluna2"></button>
-            <button id="3-3" class="btnjogo coluna3"></button>
-            
-        </div>
-    </div>     
 
-    </div>
-    <footer id="footer">© 2023 David Gonçalves, Web Dev</footer>
+        <div class="statusgame">
+            
+        </div>
+
+        <div class="palavras">
+            
+        </div>
+        <div class="fileira1 fileiras">
+            <button class="botaoLetra" id="Q"><b>Q</b> </button>
+            <button class="botaoLetra" id="W"><b>W</b> </button>
+            <button class="botaoLetra" id="E"><b>E</b> </button>
+            <button class="botaoLetra" id="R"><b>R</b> </button>
+            <button class="botaoLetra" id="T"><b>T</b> </button>
+            <button class="botaoLetra" id="Y"><b>Y</b> </button>
+            <button class="botaoLetra" id="U"><b>U</b> </button>
+            <button class="botaoLetra" id="I"><b>I</b> </button>
+            <button class="botaoLetra" id="O"><b>O</b> </button>
+            <button class="botaoLetra" id="P"><b>P</b> </button>
+
+            
+            
+        </div>
+        <div class="fileira2 fileiras">
+            <button class="botaoLetra" id="A"><b>A</b> </button>
+            <button class="botaoLetra" id="S"><b>S</b> </button>
+            <button class="botaoLetra" id="D"><b>D</b> </button>
+            <button class="botaoLetra" id="F"><b>F</b> </button>
+            <button class="botaoLetra" id="G"><b>G</b> </button>
+            <button class="botaoLetra" id="H"><b>H</b> </button>
+            <button class="botaoLetra" id="J"><b>J</b> </button>
+            <button class="botaoLetra" id="K"><b>K</b> </button>
+            <button class="botaoLetra" id="L"><b>L</b> </button>
+            <button class="botaoLetra" id="Ç"><b>Ç</b> </button>     
+            
+        </div>
+        <div class="fileira3 fileiras">
+            <button class="botaoLetra" id="Z"><b>Z</b> </button>
+            <button class="botaoLetra" id="X"><b>X</b> </button>
+            <button class="botaoLetra" id="C"><b>C</b> </button>
+            <button class="botaoLetra" id="V"><b>V</b> </button>
+            <button class="botaoLetra" id="B"><b>B</b> </button>
+            <button class="botaoLetra" id="N"><b>N</b> </button>
+            <button class="botaoLetra" id="M"><b>M</b> </button>
+            
+            
+          
+        </div>
+
+    </div>  
 </div>
-
-
+</div>
+<footer id="footer">© 2023 David Gonçalves, Web Dev</footer>
+</div>
+ 
     
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<script src="./game.js"></script>
+<script src="./game.js"></script>    
 </body>
 </html>
